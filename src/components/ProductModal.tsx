@@ -66,19 +66,19 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose, o
 
                 <div className="border-t border-slate-200 pt-6">
                   <div className="flex items-center space-x-4 mb-6">
-                    <span className="text-3xl font-bold text-slate-900">${product.price}</span>
+                    <span className="text-3xl font-bold text-slate-900">{product.price.toLocaleString('vi-VN')}₫</span>
                     {product.originalPrice && (
-                      <span className="text-xl text-slate-500 line-through">${product.originalPrice}</span>
+                      <span className="text-xl text-slate-500 line-through">{product.originalPrice.toLocaleString('vi-VN')}₫</span>
                     )}
                     {product.originalPrice && (
                       <span className="bg-red-100 text-red-800 px-2 py-1 rounded-md text-sm font-medium">
-                        Save ${(product.originalPrice - product.price).toFixed(2)}
+                        Tiết kiệm {(product.originalPrice - product.price).toLocaleString('vi-VN')}₫
                       </span>
                     )}
                   </div>
 
                   <div className="flex items-center space-x-4 mb-6">
-                    <span className="text-slate-700 font-medium">Quantity:</span>
+                    <span className="text-slate-700 font-medium">Số lượng:</span>
                     <div className="flex items-center border border-slate-300 rounded-lg">
                       <button
                         onClick={() => handleQuantityChange(-1)}
@@ -102,7 +102,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose, o
                       className="flex-1 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group"
                     >
                       <ShoppingCart className="h-5 w-5 mr-2 group-hover:animate-bounce" />
-                      Add to Cart
+                      Thêm Vào Giỏ
                     </button>
                     <button className="px-6 py-3 border-2 border-slate-300 hover:border-red-500 rounded-xl transition-colors duration-200 flex items-center justify-center group">
                       <Heart className="h-5 w-5 text-slate-600 group-hover:text-red-500 transition-colors duration-200" />
@@ -111,12 +111,12 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose, o
                 </div>
 
                 <div className="border-t border-slate-200 pt-6">
-                  <h3 className="font-semibold text-slate-900 mb-2">Features:</h3>
+                  <h3 className="font-semibold text-slate-900 mb-2">Tính năng:</h3>
                   <ul className="space-y-1 text-slate-600">
-                    <li>• High-quality materials</li>
-                    <li>• Fast shipping</li>
-                    <li>• 30-day return policy</li>
-                    <li>• 1-year warranty</li>
+                    <li>• Chất liệu cao cấp</li>
+                    <li>• Giao hàng nhanh</li>
+                    <li>• Chính sách đổi trả 30 ngày</li>
+                    <li>• Bảo hành 1 năm</li>
                   </ul>
                 </div>
               </div>
