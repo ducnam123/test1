@@ -25,7 +25,7 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onUpdateQuantity, o
           <div className="flex items-center justify-between p-6 border-b border-slate-200">
             <h2 className="text-xl font-semibold text-slate-900 flex items-center">
               <ShoppingBag className="h-6 w-6 mr-2" />
-              Shopping Cart ({items.length})
+              Giỏ Hàng ({items.length})
             </h2>
             <button
               onClick={onClose}
@@ -40,8 +40,8 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onUpdateQuantity, o
             {items.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full text-slate-500">
                 <ShoppingBag className="h-16 w-16 mb-4 opacity-50" />
-                <p className="text-lg font-medium">Your cart is empty</p>
-                <p className="text-sm">Add some products to get started</p>
+                <p className="text-lg font-medium">Giỏ hàng của bạn đang trống</p>
+                <p className="text-sm">Thêm một số sản phẩm để bắt đầu</p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -54,7 +54,7 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onUpdateQuantity, o
                     />
                     <div className="flex-1 min-w-0">
                       <h3 className="text-sm font-medium text-slate-900 truncate">{item.name}</h3>
-                      <p className="text-sm text-slate-500">${item.price}</p>
+                      <p className="text-sm text-slate-500">{item.price.toLocaleString('vi-VN')}₫</p>
                       <div className="flex items-center space-x-2 mt-2">
                         <button
                           onClick={() => onUpdateQuantity(item.id, Math.max(0, item.quantity - 1))}
@@ -73,13 +73,13 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onUpdateQuantity, o
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-medium text-slate-900">
-                        ${(item.price * item.quantity).toFixed(2)}
+                        {(item.price * item.quantity).toLocaleString('vi-VN')}₫
                       </p>
                       <button
                         onClick={() => onRemoveItem(item.id)}
                         className="text-red-500 hover:text-red-700 text-sm mt-1 transition-colors duration-200"
                       >
-                        Remove
+                        Xóa
                       </button>
                     </div>
                   </div>
@@ -92,11 +92,11 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onUpdateQuantity, o
           {items.length > 0 && (
             <div className="border-t border-slate-200 p-6 space-y-4">
               <div className="flex justify-between text-lg font-semibold">
-                <span>Total:</span>
-                <span>${total.toFixed(2)}</span>
+                <span>Tổng cộng:</span>
+                <span>{total.toLocaleString('vi-VN')}₫</span>
               </div>
               <button className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white py-3 px-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                Checkout
+                Thanh Toán
               </button>
             </div>
           )}

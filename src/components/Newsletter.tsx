@@ -21,11 +21,11 @@ const Newsletter: React.FC = () => {
           <div>
             <Mail className="h-16 w-16 text-amber-400 mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Stay Updated with Our Latest Offers
+              Cập Nhật Những Ưu Đãi Mới Nhất
             </h2>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Subscribe to our newsletter and be the first to know about new products, 
-              exclusive deals, and special promotions.
+              Đăng ký nhận bản tin của chúng tôi và là người đầu tiên biết về sản phẩm mới, 
+              ưu đãi độc quyền và khuyến mãi đặc biệt.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ const Newsletter: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
+                  placeholder="Nhập địa chỉ email của bạn"
                   className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   required
                 />
@@ -52,14 +52,14 @@ const Newsletter: React.FC = () => {
 
           {isSubscribed && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl max-w-md mx-auto">
-              Thank you for subscribing! Check your email for confirmation.
+              Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email để xác nhận.
             </div>
           )}
 
           <div className="flex flex-wrap justify-center gap-8 text-slate-400 text-sm">
-            <span>✓ No spam, ever</span>
-            <span>✓ Unsubscribe anytime</span>
-            <span>✓ Weekly updates</span>
+            <span>✓ Không spam</span>
+            <span>✓ Hủy đăng ký bất cứ lúc nào</span>
+            <span>✓ Cập nhật hàng tuần</span>
           </div>
         </div>
       </div>

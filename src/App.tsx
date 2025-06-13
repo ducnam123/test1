@@ -16,7 +16,7 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('Tất cả');
 
   // Load cart from localStorage on component mount
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     let filtered = products;
 
-    if (selectedCategory !== 'All') {
+    if (selectedCategory !== 'Tất cả') {
       filtered = filtered.filter(product => product.category === selectedCategory);
     }
 
@@ -112,25 +112,25 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Featured Products
+            Sản Phẩm Nổi Bật
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Discover our curated collection of premium products, 
-            carefully selected for quality and value.
+            Khám phá bộ sưu tập được tuyển chọn kỹ lưỡng của chúng tôi, 
+            được lựa chọn cẩn thận về chất lượng và giá trị.
           </p>
         </div>
 
         {filteredProducts.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-xl text-slate-600">No products found matching your criteria.</p>
+            <p className="text-xl text-slate-600">Không tìm thấy sản phẩm phù hợp với tiêu chí của bạn.</p>
             <button
               onClick={() => {
                 setSearchQuery('');
-                setSelectedCategory('All');
+                setSelectedCategory('Tất cả');
               }}
               className="mt-4 text-amber-600 hover:text-amber-700 font-medium"
             >
-              Clear filters
+              Xóa bộ lọc
             </button>
           </div>
         ) : (

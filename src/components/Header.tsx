@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems, onCartClick, onSearchChange,
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['All', 'Electronics', 'Clothing', 'Home & Garden', 'Sports', 'Books'];
+  const categories = ['Tất cả', 'Điện tử', 'Quần áo', 'Nhà cửa & Vườn', 'Thể thao', 'Sách'];
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems, onCartClick, onSearchChange,
                 type="text"
                 value={searchQuery}
                 onChange={handleSearch}
-                placeholder="Search products..."
+                placeholder="Tìm kiếm sản phẩm..."
                 className="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg leading-5 bg-white placeholder-slate-500 focus:outline-none focus:placeholder-slate-400 focus:ring-1 focus:ring-amber-500 focus:border-amber-500"
               />
             </div>
@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems, onCartClick, onSearchChange,
                   type="text"
                   value={searchQuery}
                   onChange={handleSearch}
-                  placeholder="Search products..."
+                  placeholder="Tìm kiếm sản phẩm..."
                   className="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg leading-5 bg-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500"
                 />
               </div>
